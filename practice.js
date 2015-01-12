@@ -186,44 +186,51 @@ var user = {
             alert('Email is : ' + this.email);
         }
 };
+
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+user.name = 'Tyler S. McGinnis';
+user.email = 'tyler.mcginnis@devmounta.in';
 
 //Now call the sayName method that's on the user object which will alert the users email
 
   //Code Here
-
+user.sayName();
 
 
 
 //NEXT PROBLEM
 
-
-
-
 //Create an empty object called methodCollection.
 
   //Code Here
+var methodCollection = {};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
+methodCollection.alertHello = function() {
+  alert('Hello');
+};
+
+methodCollection.logHello = function() {
+  console.log('Hello');
+};
 
 //Now call your alertHello and logHello methods.
 
   //Code Here
+methodCollection.alertHello();
 
+methodCollection.logHello();
 
 
 
 //NEXT PROBLEM
-
-
-
 
 var devMountainEmployees = [];
 
@@ -256,19 +263,24 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   //Code Here
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
+for(var i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i] === cahlan) {
+    devMountainEmployees.splice(i, 1);
+  };
+};
 
 
 
 //NEXT PROBLEM
-
-
-
 
 /*Now we're going to combine what we've learned today (objects) with what we learned
 yesterday (arrays). Yeah, take a deep breathe. You're ready for this, promise.
@@ -303,6 +315,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -313,9 +326,26 @@ var user1 = {
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
-}
+};
 
 //Your Code Here
+var user2 = {
+    name: 'Fredrick Jones',
+    email: 'fredrick.w.jones@gmail.com',
+    password: 'blahblahblah',
+    username: 'fredrickJones'
+};
+
+var user3 = {
+    name: 'Jarom Hancock',
+    email: 'jarom.hancock@gmail.com',
+    password: 'thebeardmaster',
+    username: 'jaromHancock'
+};
+
+users.push(user1);
+users.push(user2);
+users.push(user3);
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -326,8 +356,20 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular indice he's located in, delete him from the array.*/
 
   //Code Here
+/*for(var i = 0; i < users.length; i++) {
+  for(var key in users[i]) {
+    if(users[i].key === 'tylermcginnis33@gmail.com') {
+      users.splice(i, 1);
+    };
+  };
+}; */
+
+for(var i = 0; i < users.length; i++) {
+  if(users[i].email === 'tylermcginnis33@gmail.com') {
+    users.splice(i, 1);
+  };
+};
 
 //The activity we just did is very much how data works in 'the real world'.
-
 
 
